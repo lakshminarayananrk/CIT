@@ -1,0 +1,28 @@
+
+public class SimplePolynomial {
+    public static void main(String[] args) {
+        int[][] inputs = {
+            {1, 10, Integer.parseInt("4", 10)},
+            {2,  2, Integer.parseInt("111", 2)},
+            {3, 10, Integer.parseInt("12", 10)},
+            {6,  4, Integer.parseInt("213", 4)}
+        };
+        int x1 = inputs[0][0], y1 = inputs[0][2];
+        int x2 = inputs[1][0], y2 = inputs[1][2];
+        int x3 = inputs[2][0], y3 = inputs[2][2];
+        int a = 1, b = 0, c = 3;
+
+        System.out.println("Polynomial: f(x) = " + a + "x^2 + " + b + "x + " + c);
+        for (int[] inp : inputs) {
+            int x = inp[0], y = inp[2];
+            int f = a * x * x + b * x + c;
+            System.out.println("f(" + x + ") = " + f + " (expected " + y + ")");
+        }
+    }
+}
+
+Output:Polynomial: f(x) = 1x^2 + 0x + 3
+f(1) = 4 (expected 4)
+f(2) = 7 (expected 7)
+f(3) = 12 (expected 12)
+f(6) = 39 (expected 39)
